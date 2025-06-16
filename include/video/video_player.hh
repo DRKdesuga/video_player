@@ -4,4 +4,5 @@
 #include <opencv2/opencv.hpp>
 #include <string>
 
-void play_video(std::string& video_path);
+void play_video(const std::string& video_path, int cols, int rows);
+

@@ -1,24 +1,24 @@
 # Video Display in Pixel Art
 
-This project allows you to display a video in pixel art format directly in the terminal using OpenCV.
+This project displays a video in pixel art format directly in the terminal using OpenCV.
 
 ## 📦 Dependencies
 
-Before building the project, make sure you have OpenCV installed on your system.
+Before building the project, ensure OpenCV is installed on your system.
 
-On Debian-based systems (Ubuntu, Kali, etc.):
+**On Debian-based distributions (Ubuntu, etc.):**
 ```bash
 sudo apt update && sudo apt install libopencv-dev
 ```
 
-On Arch Linux:
+**On Arch Linux:**
 ```bash
 sudo pacman -S opencv
 ```
 
 ## 🔧 Build Instructions
 
-To compile the project, use CMake:
+Compile the project with CMake:
 ```bash
 cmake -S . -B build
 cmake --build build
@@ -26,25 +26,32 @@ cmake --build build
 
 ## ▶️ Running the Program
 
-To display a video in ASCII format, use the following command:
+### Usage
 ```bash
-./build/player <path-to-video>
+./build/player <video-path> [WIDTHxHEIGHT]
 ```
 
-Example:
-```bash
-./build/player video_store/sung_edit.mp4
-```
+- `<video-path>`: Path to the video file (e.g., `video_store/sung_edit.mp4`).
+- `[WIDTHxHEIGHT]` (optional): Desired terminal resolution in **columns × rows**, for example `80x24`. If omitted, the program will display the maximum size and prompt you to enter a custom resolution or press **Enter** to use the maximum.
 
-This will display the video inside the terminal in real-time using pixel art.
+### Examples
+
+1. **Interactive mode** (you’ll be prompted for resolution after seeing the maximum size):
+   ```bash
+   ./build/player video_store/sung_edit.mp4
+   ```
+
+2. **Direct mode** with fixed resolution:
+   ```bash
+   ./build/player video_store/sung_edit.mp4 80x24
+   ```
 
 ## 🖼️ Screenshots
 
-Here are some example screenshots of the output:
+Below is an example screenshot of the output:
 
-### Example 1:
-![Screen 1](README_src/screen.jpeg)
-
-
-
-
+### Example:
+![Sample Output](README_src/screen.jpeg)
+![Sample Output](README_src/screen2.png)
+![Sample Output](README_src/screen3.png)
+![Sample Output](README_src/screen4.png)
